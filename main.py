@@ -15,14 +15,11 @@ def playAsk(mult, dict):
     return points
 
 
-def buy(bill_sum):
-    cost = int(input('Введите сумму покупки'))
+def buy(bill_sum, cost):
     if cost > bill_sum:
         print('Недостаточно средств')
     else:
         bill_sum -= cost
-        name = input('Введит название покупки')
-        history.append((name, cost))
     return bill_sum
 
 
@@ -40,12 +37,9 @@ def playBank(bill_sum):
             bill_sum += cost
         elif choice == '2':
             cost = int(input('Введите сумму покупки'))
-            if cost > bill_sum:
-                print('Недостаточно средств')
-            else:
-                bill_sum -= cost
-                name = input('Введит название покупки')
-                history.append((name, cost))
+            bill_sum = buy(bill_sum,cost)
+            name = input('Введит название покупки')
+            history.append((name, cost))
         elif choice == '3':
             print(history)
         elif choice == '4':
@@ -54,14 +48,23 @@ def playBank(bill_sum):
             print('Неверный пункт меню')
 
 
+def create_folder(dirName):
+    if os.path.isdir(dirName):
+        print("Папка уже существует")
+        return 0
+    else:
+        os.mkdir(dirName)
+        return 1
+
+def author_name():
+    return "Создатель программы: KAPTOWE4KA"
+
+
 def menu_ask(choice):
     if choice == '1':
         dirName = input('Напишите название новой папки:\n')
-        if os.path.isdir(dirName):
-            print("Папка уже существует")
-        else:
-            os.mkdir(dirName)
-        print("Папка создана")
+        if create_folder(dirName):
+            print("Папка создана")
     elif choice == '2':
         dirName = input('Напишите название папки/файла для удаления:\n')
         if os.path.isdir(dirName):
@@ -104,7 +107,7 @@ def menu_ask(choice):
         print(sys.platform)
         print(sys.version)
     elif choice == '8':
-        print("Создатель программы: KAPTOWE4KA")
+        print(author_name())
     elif choice == '9':
         asks = {"На каком языке написана данная программа? ": "Python", "2 + 2 = ": "4",
                 "Сколько создателю данной программы лет(на момент её создания)? ": "23"}
@@ -127,7 +130,7 @@ def menu_ask(choice):
     input()
 
 
-def __main__():
+def main():
     while True:
         # os.system("cls")
         print('1- создать папку;')
@@ -147,4 +150,5 @@ def __main__():
             break
 
 
-__main__()
+if __name__ == '__main__':
+    main()
