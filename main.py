@@ -155,6 +155,22 @@ def menu_ask(choice):
             os.chdir(newDir)
         except BaseException as err:
             print(f"Ошибка {err=}, {type(err)=}")
+    elif choice == '12':
+        files = "files: "
+        dirs = "dirs: "
+        with os.scandir('.') as it:
+            for entry in it:
+                if not entry.is_file():
+                    dirs = dirs.replace(":", ", "+entry.name+" :")
+                if entry.is_file():
+                    files = files.replace(":", ", "+entry.name+" :")
+        listdir_f = open("listdir.txt", "w+", encoding="utf-8")
+        files = files.replace("files,","files:")
+        dirs = dirs.replace("dirs,","dirs:")
+        listdir_f.write(files+"\n")
+        listdir_f.write(dirs)
+        print(files)
+        print(dirs)
     elif choice == '0':
         return 0
     else:
@@ -177,6 +193,7 @@ def main():
         print('9- играть в викторину;')
         print('10-мой банковский счет;')
         print('11-смена рабочей директории;')
+        print('12-сохранить содержимое рабочей директории в файл')
         print('0- выход.')
         choice = input('Выберите пункт меню:\n')
         if menu_ask(choice) == 0:

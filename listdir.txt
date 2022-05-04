@@ -1,0 +1,2 @@
+files: bill.txt , file_manager.py , history.txt , listdir.txt , main.py , test_file_manageer.py , test_main.py , test_python.py : 
+dirs: .git , .idea , .pytest_cache , __pycache__ : 
