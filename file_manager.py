@@ -21,6 +21,7 @@ def save_bill(newbill, filename="bill.txt"):
     bill_f = open(filename, "w", encoding="utf-8")
     if isinstance(newbill, int):
         bill_f.write(str(newbill))
+        bill_f.close()
         return True
     else:
         return False
@@ -33,7 +34,7 @@ def load_history(filename="history.txt"):
         try:
             for line in hist_f:
                 name, cost = line.split(':')
-                history.append([name, cost])
+                history.append([name, int(str(cost).strip('\n'))])
             return history
         except Exception as e:
             return e
@@ -41,7 +42,7 @@ def load_history(filename="history.txt"):
         return 0
 
 
-def save_history(hist_append, filename="bill.txt"):
+def save_history(hist_append, filename="history.txt"):
     hist_f = open(filename, "w", encoding="utf-8")
     try:
         for name, cost in hist_append:

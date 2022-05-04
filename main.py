@@ -51,28 +51,33 @@ def playBank(bill_sum):
         bill_sum = tbill
     ### bill loading block
 
-while True:
-    print('1. пополнение счета')
-    print('2. покупка')
-    print('3. история покупок')
-    print('4. выход')
-    print(f'Ваш счет {bill_sum}')
+    while True:
+        print('1. пополнение счета')
+        print('2. покупка')
+        print('3. история покупок')
+        print('4. выход')
+        print(f'Ваш счет {bill_sum}')
 
-    choice = input('Выберите пункт меню')
-    if choice == '1':
-        cost = int(input('Введите сумму'))
-        bill_sum += cost
-    elif choice == '2':
-        cost = int(input('Введите сумму покупки'))
-        bill_sum = buy(bill_sum, cost)
-        name = input('Введит название покупки')
-        history.append((name, cost))
-    elif choice == '3':
-        print(history)
-    elif choice == '4':
-        break
-    else:
-        print('Неверный пункт меню')
+        choice = input('Выберите пункт меню: \n')
+        if choice == '1':
+            cost = int(input('Введите сумму'))
+            bill_sum += cost
+        elif choice == '2':
+            cost = int(input('Введите сумму покупки'))
+            bill_sum = buy(bill_sum, cost)
+            name = input('Введит название покупки')
+            history.append((name, cost))
+        elif choice == '3':
+            print(history)
+        elif choice == '4':
+            save_bill(bill_sum)
+            res = save_history(history)
+            if isinstance(res, Exception):
+                print("Ошибка: ")
+                print(res)
+            break
+        else:
+            print('Неверный пункт меню')
 
 
 def create_folder(dirName):
