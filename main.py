@@ -1,9 +1,11 @@
 import os
 import sys
 import shutil
+from file_manager import load_history, load_bill, save_history, save_bill
 
 bill_sum = 0
 history = []
+
 
 def playAsk(mult, dict):
     points = 0
@@ -11,7 +13,7 @@ def playAsk(mult, dict):
         answer = input(k)
         if answer == v:
             print("Правильный ответ")
-            points=points+mult
+            points = points + mult
     return points
 
 
@@ -24,28 +26,53 @@ def buy(bill_sum, cost):
 
 
 def playBank(bill_sum):
-    while True:
-        print('1. пополнение счета')
-        print('2. покупка')
-        print('3. история покупок')
-        print('4. выход')
-        print(f'Ваш счет {bill_sum}')
-
-        choice = input('Выберите пункт меню')
-        if choice == '1':
-            cost = int(input('Введите сумму'))
-            bill_sum += cost
-        elif choice == '2':
-            cost = int(input('Введите сумму покупки'))
-            bill_sum = buy(bill_sum,cost)
-            name = input('Введит название покупки')
+    ### history loading block
+    thist = load_history()
+    if isinstance(thist, Exception):
+        answer = input("Ошибка загрузки истории покупок. Удалить файл history.txt? y/n (История покупок обнулится)")
+        if answer == "Y" or answer == "y":
+            os.remove("history.txt")
+        elif answer == "N" or answer == "n":
+            return
+    elif isinstance(thist, list):
+        for name, cost in thist:
             history.append((name, cost))
-        elif choice == '3':
-            print(history)
-        elif choice == '4':
-            break
-        else:
-            print('Неверный пункт меню')
+    ### history loading block
+
+    ### bill loading block
+    tbill = load_bill()
+    if isinstance(tbill, Exception):
+        answer = input("Ошибка загрузки счёта. Удалить файл bill.txt? y/n (Ваш счёт обнулится)")
+        if answer == "Y" or answer == "y":
+            os.remove("bill.txt")
+        elif answer == "N" or answer == "n":
+            return
+    elif isinstance(tbill, int):
+        bill_sum = tbill
+    ### bill loading block
+
+while True:
+    print('1. пополнение счета')
+    print('2. покупка')
+    print('3. история покупок')
+    print('4. выход')
+    print(f'Ваш счет {bill_sum}')
+
+    choice = input('Выберите пункт меню')
+    if choice == '1':
+        cost = int(input('Введите сумму'))
+        bill_sum += cost
+    elif choice == '2':
+        cost = int(input('Введите сумму покупки'))
+        bill_sum = buy(bill_sum, cost)
+        name = input('Введит название покупки')
+        history.append((name, cost))
+    elif choice == '3':
+        print(history)
+    elif choice == '4':
+        break
+    else:
+        print('Неверный пункт меню')
 
 
 def create_folder(dirName):
@@ -55,6 +82,7 @@ def create_folder(dirName):
     else:
         os.mkdir(dirName)
         return 1
+
 
 def author_name():
     return "Создатель программы: KAPTOWE4KA"
@@ -83,7 +111,7 @@ def menu_ask(choice):
             if os.path.exists('copyed_files_dirs/' + dirName):
                 print("Копия файла уже существует в папке copyed_files_dirs")
             else:
-                shutil.copy(os.path.join('.',dirName),os.path.join('copyed_files_dirs', dirName))
+                shutil.copy(os.path.join('.', dirName), os.path.join('copyed_files_dirs', dirName))
                 print("Файл скопирован")
         else:
             print("Файла не существует")
@@ -111,7 +139,7 @@ def menu_ask(choice):
     elif choice == '9':
         asks = {"На каком языке написана данная программа? ": "Python", "2 + 2 = ": "4",
                 "Сколько создателю данной программы лет(на момент её создания)? ": "23"}
-        print("Викторина пройдена. Получено "+ str(playAsk(1, asks)) + " очка(ов)")
+        print("Викторина пройдена. Получено " + str(playAsk(1, asks)) + " очка(ов)")
     elif choice == '10':
         playBank(bill_sum)
     elif choice == '11':
