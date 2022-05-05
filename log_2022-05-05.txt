@@ -1,0 +1,66 @@
+2022-05-05 11:53:24.425543 >>> Function invoking: load_history	Args: ()	Kwargs: {}
+2022-05-05 11:53:24.430858 >>> Function invoking: load_bill	Args: ()	Kwargs: {}
+2022-05-05 11:53:29.854687 >>> Function invoking: buy	Args: (700, 700)	Kwargs: {}
+2022-05-05 11:56:29.940083 >>> Function invoking: load_history	Args: ()	Kwargs: {}
+2022-05-05 11:56:29.942088 >>> Function invoking: load_bill	Args: ()	Kwargs: {}
+2022-05-05 11:57:39.851351 >>> Function invoking: load_history	Args: ()	Kwargs: {}
+2022-05-05 11:57:39.854731 >>> Function invoking: load_bill	Args: ()	Kwargs: {}
+2022-05-05 11:57:44.109585 >>> Function invoking: buy	Args: (700, 500000)	Kwargs: {}
+2022-05-05 11:57:50.826360 >>> Function invoking: print_history	Args: ()	Kwargs: {}
+2022-05-05 11:59:36.844555 >>> Function invoking: load_history	Args: ()	Kwargs: {}
+2022-05-05 11:59:36.852521 >>> Function invoking: load_bill	Args: ()	Kwargs: {}
+2022-05-05 11:59:58.162050 >>> Function invoking: buy	Args: (500700, 500000)	Kwargs: {}
+2022-05-05 12:00:04.969169 >>> Function invoking: print_history	Args: ()	Kwargs: {}
+2022-05-05 12:00:11.359594 >>> Function invoking: save_bill	Args: (700,)	Kwargs: {}
+2022-05-05 12:00:11.362614 >>> Function invoking: save_history	Args: ([('Гладильная доска', 21000), ('kartojka', 210000), ('Гладильная доска', 21000), ('kartojka', 210000), ('Fisting Anal', 300), ('Дешёвка', 13000), ('AK-103', 500000)],)	Kwargs: {}
+2022-05-05 12:00:11.362614 >>> Function invoking: playBank	Args: ()	Kwargs: {}
+2022-05-05 12:00:12.275031 >>> Function invoking: menu_ask	Args: ('10',)	Kwargs: {}
+2022-05-05 12:03:37.771987 >>> Function invoking: menu_ask	Args: ('',)	Kwargs: {}
+2022-05-05 12:04:05.835885 >>> Function invoking: menu_ask	Args: ('0',)	Kwargs: {}
+2022-05-05 12:06:24.111226 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:07:28.098749 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:07:47.803654 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:07:47.820313 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:09:09.859996 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:09:09.862865 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:10:13.110627 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:10:13.122539 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:10:28.841848 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:10:28.847218 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:10:49.924177 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:10:49.929045 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:11:37.373106 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:11:37.375918 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:11:49.245175 >>> Function invoking: list_to_line	Args: ([],)	Kwargs: {}
+2022-05-05 12:11:49.253253 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:12:13.225120 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:12:13.228098 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:13:00.669057 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:13:00.673421 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:14:16.833850 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:14:16.846305 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:14:19.030902 >>> Function invoking: menu_ask	Args: ('12',)	Kwargs: {}
+2022-05-05 12:15:33.636341 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:15:33.642339 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:15:37.731213 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:15:37.733121 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:16:22.563963 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:16:22.572529 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:17:27.515292 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:17:27.522314 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:17:30.691289 >>> Function invoking: menu_ask	Args: ('12',)	Kwargs: {}
+2022-05-05 12:24:25.392842 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:24:25.399072 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:24:57.566875 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:24:57.575001 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:25:11.193056 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:25:11.196175 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:26:00.791831 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:26:00.802796 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:26:13.020801 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:26:13.021432 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:26:28.471361 >>> Function invoking: list_to_line	Args: (['bill.txt', 'decorators.py', 'file_manager.py', 'history.txt', 'listdir.txt', 'log_2022-05-05.txt', 'main.py', 'test_file_manageer.py', 'test_main.py', 'test_python.py'],)	Kwargs: {}
+2022-05-05 12:26:28.476959 >>> Function invoking: list_to_line	Args: (['.git', '.idea', '.pytest_cache', '__pycache__'],)	Kwargs: {}
+2022-05-05 12:26:29.500559 >>> Function invoking: menu_ask	Args: ('12',)	Kwargs: {}
+2022-05-05 12:26:30.731981 >>> Function invoking: menu_ask	Args: ('0',)	Kwargs: {}
+2022-05-05 12:26:30.747670 >>> Function invoking: main	Args: ()	Kwargs: {}

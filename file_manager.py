@@ -1,6 +1,9 @@
 import os
 
+from decorators import simple_logger as logged
 
+
+@logged
 def load_bill(filename="bill.txt"):
     if os.path.exists(filename):
         bill_f = open(filename, "r", encoding="utf-8")
@@ -17,6 +20,7 @@ def load_bill(filename="bill.txt"):
         return 0
 
 
+@logged
 def save_bill(newbill, filename="bill.txt"):
     bill_f = open(filename, "w", encoding="utf-8")
     if isinstance(newbill, int):
@@ -27,6 +31,7 @@ def save_bill(newbill, filename="bill.txt"):
         return False
 
 
+@logged
 def load_history(filename="history.txt"):
     if os.path.exists(filename):
         hist_f = open(filename, "r", encoding="utf-8")
@@ -42,6 +47,7 @@ def load_history(filename="history.txt"):
         return 0
 
 
+@logged
 def save_history(hist_append, filename="history.txt"):
     hist_f = open(filename, "w", encoding="utf-8")
     try:
