@@ -1,12 +1,15 @@
 import os
-import sys
 import shutil
+import sys
+
+from decorators import bank_history_decorator as decor, simple_logger as logged
 from file_manager import load_history, load_bill, save_history, save_bill
 
 bill_sum = 0
 history = []
 
 
+@logged
 def playAsk(mult, dict):
     points = 0
     for k, v in dict.items():
@@ -17,15 +20,24 @@ def playAsk(mult, dict):
     return points
 
 
+@logged
 def buy(bill_sum, cost):
     if cost > bill_sum:
-        print('Недостаточно средств')
+        return -1
     else:
         bill_sum -= cost
     return bill_sum
 
 
-def playBank(bill_sum):
+@decor
+@logged
+def print_history():
+    print("Название  /// Ценник")
+    for name, cost in history:
+        print(name+" : "+str(cost))
+
+@logged
+def playBank():
     ### history loading block
     thist = load_history()
     if isinstance(thist, Exception):
@@ -63,12 +75,22 @@ def playBank(bill_sum):
             cost = int(input('Введите сумму'))
             bill_sum += cost
         elif choice == '2':
-            cost = int(input('Введите сумму покупки'))
-            bill_sum = buy(bill_sum, cost)
-            name = input('Введит название покупки')
-            history.append((name, cost))
+            while True:
+                try:
+                    cost = input('Введите сумму покупки')
+                    cost = int(cost)
+                    break
+                except:
+                    print("Ведите сумму!")
+            newbill = buy(bill_sum, cost)
+            if newbill > 0:
+                bill_sum = newbill
+                name = input('Введит название покупки')
+                history.append((name, cost))
+            else:
+                print("Не хватает средств для покупки!")
         elif choice == '3':
-            print(history)
+            print_history()
         elif choice == '4':
             save_bill(bill_sum)
             res = save_history(history)
@@ -79,7 +101,7 @@ def playBank(bill_sum):
         else:
             print('Неверный пункт меню')
 
-
+@logged
 def create_folder(dirName):
     if os.path.isdir(dirName):
         print("Папка уже существует")
@@ -89,10 +111,27 @@ def create_folder(dirName):
         return 1
 
 
+@logged
 def author_name():
     return "Создатель программы: KAPTOWE4KA"
 
 
+@logged
+def list_to_line(str_list, determinator=', '):
+    try:
+        #print(type(str_list))
+        line = ""
+        for i in range(0, len(str_list)):
+            if i == 0:
+                line += str(str_list[i])
+            else:
+                line += determinator + str(str_list[i])
+        return line
+    except Exception as e:
+        return e
+
+
+@logged
 def menu_ask(choice):
     if choice == '1':
         dirName = input('Напишите название новой папки:\n')
@@ -146,7 +185,7 @@ def menu_ask(choice):
                 "Сколько создателю данной программы лет(на момент её создания)? ": "23"}
         print("Викторина пройдена. Получено " + str(playAsk(1, asks)) + " очка(ов)")
     elif choice == '10':
-        playBank(bill_sum)
+        playBank()
     elif choice == '11':
         print("Текущая директория:")
         print(os.getcwd())
@@ -156,21 +195,28 @@ def menu_ask(choice):
         except BaseException as err:
             print(f"Ошибка {err=}, {type(err)=}")
     elif choice == '12':
-        files = "files: "
-        dirs = "dirs: "
-        with os.scandir('.') as it:
-            for entry in it:
-                if not entry.is_file():
-                    dirs = dirs.replace(":", ", "+entry.name+" :")
-                if entry.is_file():
-                    files = files.replace(":", ", "+entry.name+" :")
+        dirs = [str(entry.name) for entry in os.scandir('.') if not entry.is_file()]
+        files = [str(entry.name) for entry in os.scandir('.') if entry.is_file()]
+        """for entry in it:
+            if not entry.is_file():
+                dirs = dirs.replace(":", ", "+entry.name+" :")
+            if entry.is_file():
+                files = files.replace(":", ", "+entry.name+" :")
+                """
         listdir_f = open("listdir.txt", "w+", encoding="utf-8")
-        files = files.replace("files,","files:")
-        dirs = dirs.replace("dirs,","dirs:")
-        listdir_f.write(files+"\n")
-        listdir_f.write(dirs)
-        print(files)
-        print(dirs)
+        file_line = list_to_line(files)
+        dirs_line = list_to_line(dirs)
+
+        if isinstance(file_line, Exception):
+            print(f"Ошибка: {file_line=}, {type(file_line)=}")
+        if isinstance(dirs_line, Exception):
+            print(f"Ошибка: {dirs_line=}, {type(dirs_line)=}")
+        else:
+            listdir_f.write("files: "+file_line+"\n")
+            listdir_f.write("dirs: "+dirs_line)
+            print(file_line)
+            print(dirs_line)
+            listdir_f.close()
     elif choice == '0':
         return 0
     else:
@@ -179,6 +225,7 @@ def menu_ask(choice):
     input()
 
 
+@logged
 def main():
     while True:
         # os.system("cls")

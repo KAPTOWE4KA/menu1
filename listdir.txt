@@ -1,2 +1,2 @@
-files: bill.txt , file_manager.py , history.txt , listdir.txt , main.py , test_file_manageer.py , test_main.py , test_python.py : 
-dirs: .git , .idea , .pytest_cache , __pycache__ : 
+files: bill.txt, decorators.py, file_manager.py, history.txt, listdir.txt, log_2022-05-05.txt, main.py, test_file_manageer.py, test_main.py, test_python.py
+dirs: .git, .idea, .pytest_cache, __pycache__
